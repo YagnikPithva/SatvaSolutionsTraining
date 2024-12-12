@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #ddd;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .inline {
+            display: inline-block;
+            width: auto;
+        }
+
+        .inline input {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Elements -->
+    Element = <tagname> Content goes here... </tagname>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+
+    <!-- Links -->
+    <a href="#">link text</a>
+    <br><br>
+    <a href="https://github.com/YagnikPithva" target="_blank">Visit My GitHub Page!</a>
+    <br><br>
+    <a href="#"><img src="smiley.gif" alt="Image With Link" style="width:42px;height:42px;"></a>
+    <br><br>
+    <a href="mailto:someone@example.com">Send email with link</a>
+    <br><br>
+    <button onclick="document.location='#'">Button As Link</button>
+    <br><br>
+
+    <!-- Images -->
+    <img src="img_girl.jpg" alt="Girl in a jacket" style="width:50px;height:60px;">
+    <br>
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="50" height="60">
+
+    <!-- Tables -->
+    <table border="1px solid black" cellspacing="4px" cellpadding="3px">
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+    </table>
+    <br><!-- Caption and verical header -->
+    <table border="2">
+        <caption>Table Caption</caption>
+        <tr>
+            <th>Firstname</th>
+            <td>Jill</td>
+            <td>Eve</td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td>Smith</td>
+            <td>Jackson</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>94</td>
+            <td>50</td>
+        </tr>
+    </table>
+    <br><!-- Colspan and RowSpan -->
+    <table border="2">
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+    <br><!-- ColGroup -->
+
+    <table style="width: 100%;">
+        <colgroup>
+            <col span="2" style="background-color: #D6EEEE">
+        </colgroup>
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+    </table>
+
+    <br>
+    <!-- Lists -->
+    <ul style="list-style-type: square;"><!--Unordered Lists -->
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <ol type="A"><!--Ordered Lists -->
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    <dl><!--Description Lists -->
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+    </dl>
+
+    <br>
+    <!-- Forms -->
+
+
+    <h1>Comprehensive HTML Form</h1>
+    <form action="#" method="POST">
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="John Doe" minlength="3"
+                    maxlength="50">
+            </div>
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="example@domain.com">
+            </div>
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="\(\d{3}\) \d{3}-\d{4}">
+            </div>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+        </fieldset>
+
+        <!-- Address Information -->
+        <fieldset>
+            <legend>Address Information</legend>
+            <div>
+                <label for="street">Street Address:</label>
+                <input type="text" id="street" name="street" required placeholder="123 Main St">
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required placeholder="New York">
+            </div>
+            <div>
+                <label for="state">State:</label>
+                <select id="state" name="state" required>
+                    <option value="">Select State</option>
+                    <option value="ny">New York</option>
+                    <option value="ca">California</option>
+                    <option value="tx">Texas</option>
+                    <option value="fl">Florida</option>
+                </select>
+            </div>
+            <div>
+                <label for="zipcode">Zip Code:</label>
+                <input type="text" id="zipcode" name="zipcode" required pattern="\d{5}">
+            </div>
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset>
+            <legend>Preferences</legend>
+            <div>
+                <label for="newsletter">Subscribe to Newsletter:</label>
+                <input type="checkbox" id="newsletter" name="newsletter">
+            </div>
+            <div>
+                <label for="contactMethod">Preferred Contact Method:</label>
+                <select id="contactMethod" name="contactMethod">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="text">Text Message</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Additional Information -->
+        <fieldset>
+            <legend>Additional Information</legend>
+            <div>
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Enter your feedback here..."></textarea>
+            </div>
+            <div class="form-group inline">
+                <label for="rating">Rating:</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" step="1" placeholder="1 to 5">
+            </div>
+            <div class="form-group inline">
+                <label for="date">Event Date:</label>
+                <input type="date" id="eventDate" name="eventDate">
+            </div>
+        </fieldset>
+
+        <!-- File Upload -->
+        <fieldset>
+            <legend>File Upload</legend>
+            <div>
+                <label for="profilePic">Profile Picture:</label>
+                <input type="file" id="profilePic" name="profilePic" accept="image/*">
+            </div>
+        </fieldset>
+
+        <!-- Datalist Example -->
+        <fieldset>
+            <legend>Favorite Colors</legend>
+            <div>
+                <label for="color">Choose a color:</label>
+                <input list="colors" id="color" name="color" placeholder="Select a color">
+                <datalist id="colors">
+                    <option value="Red">
+                    <option value="Blue">
+                    <option value="Green">
+                    <option value="Yellow">
+                    <option value="Purple">
+                </datalist>
+            </div>
+        </fieldset>
+
+        <div>
+            <button type="submit">Submit Form</button>
+        </div>
+    </form>
+
+    <!-- Output Element -->
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="a" name="a" value="50">
+        <input type="number" id="b" name="b" value="50">=
+        <output name="x" for="a b"></output>
+    </form>
+
+
+</body>
+
+</html>
