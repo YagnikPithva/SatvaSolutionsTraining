@@ -4,38 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Introduction</title>
+    <title>HTML Forms</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        form {
-            width: 500px;
-            margin: 0 auto;
-        }
-
-        fieldset {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 2px solid #ddd;
-        }
-
-        legend {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
         input,
         select,
         textarea,
@@ -45,145 +15,10 @@
             margin-top: 5px;
             box-sizing: border-box;
         }
-
-        .inline {
-            display: inline-block;
-            width: auto;
-        }
-
-        .inline input {
-            width: auto;
-        }
     </style>
 </head>
 
 <body>
-
-    <!-- Elements -->
-    Element = <tagname> Content goes here... </tagname>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-
-    <!-- Links -->
-    <a href="#">link text</a>
-    <br><br>
-    <a href="https://github.com/YagnikPithva" target="_blank">Visit My GitHub Page!</a>
-    <br><br>
-    <a href="#"><img src="smiley.gif" alt="Image With Link" style="width:42px;height:42px;"></a>
-    <br><br>
-    <a href="mailto:someone@example.com">Send email with link</a>
-    <br><br>
-    <button onclick="document.location='#'">Button As Link</button>
-    <br><br>
-
-    <!-- Images -->
-    <img src="img_girl.jpg" alt="Girl in a jacket" style="width:50px;height:60px;">
-    <br>
-    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="50" height="60">
-
-    <!-- Tables -->
-    <table border="1px solid black" cellspacing="4px" cellpadding="3px">
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-        </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-        </tr>
-    </table>
-    <br><!-- Caption and verical header -->
-    <table border="2">
-        <caption>Table Caption</caption>
-        <tr>
-            <th>Firstname</th>
-            <td>Jill</td>
-            <td>Eve</td>
-        </tr>
-        <tr>
-            <th>Lastname</th>
-            <td>Smith</td>
-            <td>Jackson</td>
-        </tr>
-        <tr>
-            <th>Age</th>
-            <td>94</td>
-            <td>50</td>
-        </tr>
-    </table>
-    <br><!-- Colspan and RowSpan -->
-    <table border="2">
-        <tr>
-            <th colspan="2">Name</th>
-            <th>Age</th>
-        </tr>
-        <tr>
-            <td rowspan="2">Jill</td>
-            <td>Smith</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>Jackson</td>
-            <td>94</td>
-        </tr>
-    </table>
-    <br><!-- ColGroup -->
-
-    <table style="width: 100%;">
-        <colgroup>
-            <col span="2" style="background-color: #D6EEEE">
-        </colgroup>
-        <tr>
-            <th>MON</th>
-            <th>TUE</th>
-            <th>WED</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-        </tr>
-    </table>
-
-    <br>
-    <!-- Lists -->
-    <ul style="list-style-type: square;"><!--Unordered Lists -->
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-    </ul>
-    <ol type="A"><!--Ordered Lists -->
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-    </ol>
-    <dl><!--Description Lists -->
-        <dt>Coffee</dt>
-        <dd>- black hot drink</dd>
-        <dt>Milk</dt>
-        <dd>- white cold drink</dd>
-    </dl>
-
-    <br>
-    <!-- Forms -->
-
 
     <h1>Comprehensive HTML Form</h1>
     <form action="#" method="POST">
@@ -208,6 +43,7 @@
                 <input type="date" id="dob" name="dob" required>
             </div>
         </fieldset>
+        <br>
 
         <!-- Address Information -->
         <fieldset>
@@ -235,6 +71,7 @@
                 <input type="text" id="zipcode" name="zipcode" required pattern="\d{5}">
             </div>
         </fieldset>
+        <br>
 
         <!-- Preferences -->
         <fieldset>
@@ -252,6 +89,7 @@
                 </select>
             </div>
         </fieldset>
+        <br>
 
         <!-- Additional Information -->
         <fieldset>
@@ -269,6 +107,7 @@
                 <input type="date" id="eventDate" name="eventDate">
             </div>
         </fieldset>
+        <br>
 
         <!-- File Upload -->
         <fieldset>
@@ -278,6 +117,7 @@
                 <input type="file" id="profilePic" name="profilePic" accept="image/*">
             </div>
         </fieldset>
+        <br>
 
         <!-- Datalist Example -->
         <fieldset>
@@ -294,9 +134,12 @@
                 </datalist>
             </div>
         </fieldset>
+        <br>
 
         <div>
             <button type="submit">Submit Form</button>
+            <input type="submit" formmethod="post" value="Submit Form With Method Post">
+            <input type="submit" formnovalidate value="Submit Form Without Validation">
         </div>
     </form>
 

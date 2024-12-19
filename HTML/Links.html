@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Links</title>
+    <!-- Link With Different Colors -->
+    <style>
+        div>a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        div>a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        div>a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        div>a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Basic -->
+    <a href="url">link text</a>
+
+    <br />
+    <!-- Link With Website -->
+    <a href="https://www.google.com/">Visit Google.com!</a>
+
+    <br />
+    <!-- Link With Website On New Page -->
+    <a href="https://www.google.com/" target="_blank"> Visit Google.com! on New Browser's Tab</a>
+
+    <br />
+    <p>Absolute URLs</p>
+    <p><a href="https://www.w3.org/">W3C</a></p>
+    <p><a href="https://www.google.com/">Google</a></p>
+
+    <p>Relative URLs</p>
+    <p><a href="html_images.asp">HTML Images</a></p>
+    <p><a href="/css/default.asp">CSS Tutorial</a></p>
+
+    <div>
+        <span>Image As A Link</span>
+        <a href="#">
+            <img src="https://www.w3schools.com/html/smiley.gif" alt="Image link" style="width:42px;height:42px;">
+        </a>
+        <br /><br />
+        <a href="mailto:someone@example.com">Send email with link</a>
+        <br /><br />
+        <button onclick="document.location='#'">Button As Link</button>
+        <br /><br />
+        <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Hover To See Title of link</a>
+    </div>
+    <br /><br />
+    
+    <!-- Bookmark With Link On Same Page -->
+    <a href="#C4">Jump to Chapter 4 BookMark</a>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <h2 id="C4">Chapter 4</h2>
+
+</body>
+
+</html>

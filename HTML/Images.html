@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Images</title>
+
+    <!-- BackGround Image -->
+    <style>
+        body {
+            background-image: url('https://www.w3schools.com/html/img_girl.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Images -->
+    <img src="img_girl.jpg" alt="Girl in a jacket - Alter Attribute" style="width:50px;height:60px;">
+    <br>
+    <br>
+    <p> Image </p>
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="50" height="60">
+    <br>
+    <p>Floating Left Image (Default)</p>
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="50" height="60">
+    <br>
+    <p>Floating Right Image</p>
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="50" height="60"
+        style="float: right;">
+
+    <br><br><br>
+
+    <h2>Image Maps</h2>
+    <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+
+    <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.w3schools.com/html/computer.htm">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.w3schools.com/html/phone.htm">
+        <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="https://www.w3schools.com/html/coffee.htm">
+    </map>
+
+    <br><br><br>
+
+    <h2>The picture Element</h2>
+    <picture>
+        <source media="(min-width: 650px)" srcset="https://www.w3schools.com/html/img_food.jpg">
+        <source media="(min-width: 465px)" srcset="https://www.w3schools.com/html/img_car.jpg">
+        <img src="https://www.w3schools.com/html/img_girl.jpg" style="width:auto;">
+    </picture>
+
+    <p>Resize the browser to see different versions of the picture loading at different viewport sizes.
+        The browser looks for the first source element where the media query matches the user's current viewport width,
+        and fetches the image specified in the srcset attribute.</p>
+</body>
+
+</html>
