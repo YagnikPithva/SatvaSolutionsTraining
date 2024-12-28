@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing and Filtering Examples</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            margin: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .highlight {
+            background-color: #e74c3c;
+        }
+
+        .parent {
+            border: 4px dashed #333;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>jQuery Traversing and Filtering Examples</h3>
+
+        <div class="parent">
+            <div class="box">Box 1</div>
+            <div class="box highlight">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>
+        </div>
+
+        <br>
+
+        <button id="filterBtn">Filter Boxes</button>
+        <button id="siblingsBtn">Find Siblings</button>
+        <button id="parentBtn">Find Parent</button>
+        <button id="closestBtn">Find Closest Parent</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // 1. Filtering Methods
+
+            $("#filterBtn").click(function () {
+                $(".box").filter(function () {
+                    return $(this).text() === "Box 2"; // Filter box with text "Box 2"
+                }).css("background-color", "#2ecc71"); // Change color to green
+            });
+
+            $("#siblingsBtn").click(function () {
+                $(".box").not(".highlight").css("background-color", "#f39c12"); // Highlight non-highlighted boxes
+            });
+
+            $("#parentBtn").click(function () {
+                if ($(".highlight").is(".box")) {
+                    alert("Box 2 is a box!");
+                }
+            });
+
+            $("#closestBtn").click(function () {
+                $(".parent").has(".highlight").css("border", "2px solid #8e44ad"); // Find parent with box containing "highlight"
+            });
+
+            // 2. Traversing Methods
+
+            $(".box").click(function () {
+                var parent = $(this).parent();
+                parent.css("border", "2px solid #2980b9");
+            });
+
+            $(".parent").click(function () {
+                $(this).children(".box").css("background-color", "#9b59b6"); // Change color of children boxes
+            });
+
+            $(".parent").click(function () {
+                $(this).find(".highlight").css("border", "2px solid #34495e"); // Add border to child with highlight class
+            });
+
+            $(".highlight").click(function () {
+                $(this).siblings().css("background-color", "#e67e22"); // Change color of siblings
+            });
+
+            $(".highlight").click(function () {
+                $(this).closest(".parent").css("border", "4px solid #c0392b"); // Find closest parent and add border
+            });
+        });
+    </script>
+
+</body>
+
+</html>

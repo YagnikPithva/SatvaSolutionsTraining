@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Introduction</title>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h4 {
+            color: #333;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .myclass {
+            color: green;
+        }
+
+        #unique {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>jQuery Step-by-Step Introduction</h2>
+
+    <section id="section1">
+        <h2>1. jQuery Syntax</h2>
+        <p>jQuery syntax is easy to learn. The basic syntax is:</p>
+        <pre>
+            $(selector).action();
+        </pre>
+    </section>
+
+    <section id="section2">
+        <h4>2. jQuery Selectors</h4>
+        <p>jQuery uses CSS-like selectors to target HTML elements. Here are some of the most common selectors:</p>
+
+        <h3>By ID Selector</h3>
+        <p>By using <strong id="unique">#id</strong>, we can select elements by their ID attribute.</p>
+        <button id="myButton">Click to change ID color</button>
+
+        <h3>By Class Selector</h3>
+        <p>By using <strong>.class</strong>, we can select all elements with a specific class.</p>
+        <button id="highlightBtn">Click to highlight text</button>
+
+        <h3>By Element Selector</h3>
+        <p>By using <strong>element</strong>, we can select all instances of an element (e.g., <code>&lt;p&gt;</code>).
+        </p>
+        <button id="changeParagraphsBtn">Click to change paragraphs' color</button>
+
+        <div class="content">
+            <p>This is a paragraph with no class.</p>
+            <p class="highlight">This paragraph has the "highlight" class.</p>
+            <p>This is another paragraph with no class.</p>
+        </div>
+
+        <h3>By Attribute Selector</h3>
+        <p>We can also select elements based on attributes (e.g., <strong>src</strong>, <strong>href</strong>, etc.).
+        </p>
+        <a href="https://www.example.com" id="exampleLink">This is a link with a specific href attribute.</a>
+
+        <h3>jQuery Example of Selecting Multiple Elements</h3>
+        <p>Use multiple selectors by combining them:</p>
+        <button id="multipleSelectorsBtn">Click to highlight class and ID</button>
+    </section>
+
+    <section id="section3">
+        <h4>3. jQuery Actions/Methods</h4>
+        <p>jQuery provides many useful methods for manipulating elements. Let's go through a few of them:</p>
+
+        <h3>Change Text</h3>
+        <button id="changeTextBtn">Click me to change text</button>
+        <p id="changeText">This text will change.</p>
+
+        <h3>Toggle Visibility</h3>
+        <button id="toggleBtn">Click me to hide/show paragraph</button>
+        <p id="toggleParagraph">This paragraph will be toggled (hidden/shown).</p>
+
+        <h3>Fade In/Out</h3>
+        <button id="fadeBtn">Click to fade in/out</button>
+        <div id="fadeBox" class="hidden" style="width:100px;height:100px;background-color:yellow;"></div>
+    </section>
+
+    <script>
+
+        $(document).ready(function () {
+            // By ID Selector
+            $("#myButton").click(function () {
+                $("#unique").css("color", "purple");
+            });
+
+            // By Class Selector
+            $("#highlightBtn").click(function () {
+                $(".highlight").css("font-size", "20px");
+            });
+
+            // By Element Selector
+            $("#changeParagraphsBtn").click(function () {
+                $("div.content p").css("color", "blue");
+            });
+
+            // Attribute Selector Example
+            $("#exampleLink").hover(function () {
+                $(this).css("color", "green");
+            });
+
+            // Multiple Selectors Example
+            $("#multipleSelectorsBtn").click(function () {
+                $("p.highlight, #unique").css("background-color", "yellow");
+            });
+        });
+        
+        $(document).ready(function () {
+            // Change Text Example
+            $("#changeTextBtn").click(function () {
+                $("#changeText").text("This text was changed with jQuery!");
+            });
+
+            // Toggle Visibility
+            $("#toggleBtn").click(function () {
+                $("#toggleParagraph").toggleClass("hidden");
+            });
+
+            // Fade In/Out
+            $("#fadeBtn").click(function () {
+                $("#fadeBox").fadeToggle();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

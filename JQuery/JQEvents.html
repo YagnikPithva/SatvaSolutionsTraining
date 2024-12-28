@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events Demonstration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #hoverBox {
+            background-color: #e74c3c;
+        }
+
+        #focusInput {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>jQuery Event Demonstration</h4>
+
+    <section id="clickEvent">
+        <h5>1. Click Event</h5>
+        <p>Click the box to change its text:</p>
+        <div class="box" id="clickBox">Click me</div>
+
+        <pre><code>
+      $("#clickBox").click(function() {
+        $(this).text("You clicked me!");
+      });
+    </code></pre>
+    </section>
+
+    <section id="hoverEvent">
+        <h5>2. Hover Event</h5>
+        <p>Hover over the box to change its color:</p>
+        <div class="box" id="hoverBox">Hover me</div>
+
+        <pre><code>
+      $("#hoverBox").hover(
+        function() { // mouse enter
+          $(this).css("background-color", "#2ecc71");
+        },
+        function() { // mouse leave
+          $(this).css("background-color", "#e74c3c");
+        }
+      );
+    </code></pre>
+    </section>
+
+    <section id="keydownEvent">
+        <h5>3. Keydown Event</h5>
+        <p>Type something in the input field to trigger the keydown event:</p>
+        <input type="text" id="keydownInput" placeholder="Type here..." />
+
+        <pre><code>
+      $("#keydownInput").keydown(function(event) {
+        alert("Key down: " + event.key);
+      });
+    </code></pre>
+    </section>
+
+    <section id="keyupEvent">
+        <h5>4. Keyup Event</h5>
+        <p>Type something in the input field and see the keyup event in action:</p>
+        <input type="text" id="keyupInput" placeholder="Type here..." />
+
+        <pre><code>
+      $("#keyupInput").keyup(function(event) {
+        console.log("Key up: " + event.key);
+      });
+    </code></pre>
+    </section>
+
+    <section id="focusEvent">
+        <h5>5. Focus Event</h5>
+        <p>Click or tab into the input field to trigger the focus event:</p>
+        <input type="text" id="focusInput" placeholder="Focus on me..." />
+
+        <pre><code>
+      $("#focusInput").focus(function() {
+        $(this).css("border", "2px solid #3498db");
+      });
+    </code></pre>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+        
+            $("#clickBox").click(function () {
+                $(this).text("You clicked me!");
+            });
+        
+            $("#hoverBox").hover(
+                function () {
+                    $(this).css("background-color", "#2ecc71");
+                },
+                function () {
+                    $(this).css("background-color", "#e74c3c");
+                }
+            );
+        
+            $("#keydownInput").keydown(function (event) {
+                alert("Key down: " + event.key);
+            });
+
+            $("#keyupInput").keyup(function (event) {
+                console.log("Key up: " + event.key);
+            });
+
+            $("#focusInput").focus(function () {
+                $(this).css("border", "2px solid #3498db");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
