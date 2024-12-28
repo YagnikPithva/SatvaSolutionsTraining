@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>JavaScript Objects Demonstration</h4>
+
+    <div>
+        <h5>1. Creating an Object</h5>
+        <pre><code>
+            let person = {
+                name: "John",
+                age: 30,
+                city: "New York"
+            };
+        </code></pre>
+        <button onclick="displayPersonObject()">Show Object</button>
+        <p id="personOutput" class="output"></p>
+    </div>
+
+    <div>
+        <h5>2. Accessing Object Properties</h5>
+        <pre><code>
+            let name = person.name;
+            let age = person["age"];
+        </code></pre>
+        <button onclick="accessPersonProperties()">Access Properties</button>
+        <p id="accessOutput" class="output"></p>
+    </div>
+
+    <div>
+        <h5>3. Adding and Modifying Object Properties</h5>
+        <pre><code>
+            person.job = "Developer";
+            person.age = 35;  // Modifying existing property
+        </code></pre>
+        <button onclick="addModifyProperties()">Add/Modify Properties</button>
+        <p id="addModifyOutput" class="output"></p>
+    </div>
+
+    <div>
+        <h5>4. Methods in Objects</h5>
+        <pre><code>
+            person.greet = function() {
+                return "Hello, my name is " + this.name;
+            };
+        </code></pre>
+        <button onclick="callMethod()">Call Method</button>
+        <p id="methodOutput" class="output"></p>
+    </div>
+
+    <div>
+        <h5>5. The `this` Keyword in Objects</h5>
+        <pre><code>
+            person.describe = function() {
+                return this.name + " is " + this.age + " years old and lives in " + this.city;
+            };
+        </code></pre>
+        <button onclick="useThisKeyword()">Use `this` Keyword</button>
+        <p id="thisOutput" class="output"></p>
+    </div>
+
+    <div>
+        <h5>6. Object Constructor</h5>
+        <pre><code>
+            function Person(name, age, city) {
+                this.name = name;
+                this.age = age;
+                this.city = city;
+                this.greet = function() {
+                    return "Hello, my name is " + this.name;
+                };
+            }
+            let newPerson = new Person("Alice", 28, "Los Angeles");
+        </code></pre>
+        <button onclick="createObjectWithConstructor()">Create Object with Constructor</button>
+        <p id="constructorOutput" class="output"></p>
+    </div>
+
+    <script>
+        // 1. Creating an Object
+        let person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        function displayPersonObject() {
+            document.getElementById("personOutput").textContent = JSON.stringify(person, null, 2);
+        }
+
+        // 2. Accessing Object Properties
+        function accessPersonProperties() {
+            let name = person.name;
+            let age = person["age"];
+            document.getElementById("accessOutput").textContent = `Name: ${name}, Age: ${age}`;
+        }
+
+        // 3. Adding and Modifying Object Properties
+        function addModifyProperties() {
+            person.job = "Developer";
+            person.age = 35;  // Modifying the existing "age" property
+            document.getElementById("addModifyOutput").textContent = `Updated Person: ${JSON.stringify(person, null, 2)}`;
+        }
+
+        // 4. Methods in Objects
+        person.greet = function () {
+            return "Hello, my name is " + this.name;
+        };
+
+        function callMethod() {
+            document.getElementById("methodOutput").textContent = person.greet();
+        }
+
+        // 5. The `this` Keyword in Objects
+        person.describe = function () {
+            return this.name + " is " + this.age + " years old and lives in " + this.city;
+        };
+
+        function useThisKeyword() {
+            document.getElementById("thisOutput").textContent = person.describe();
+        }
+
+        // 6. Object Constructor
+        function Person(name, age, city) {
+            this.name = name;
+            this.age = age;
+            this.city = city;
+            this.greet = function () {
+                return "Hello, my name is " + this.name;
+            };
+        }
+
+        function createObjectWithConstructor() {
+            let newPerson = new Person("Alice", 28, "Los Angeles");
+            document.getElementById("constructorOutput").textContent = `New Person: ${newPerson.name}, ${newPerson.age} years old, lives in ${newPerson.city}`;
+        }
+    </script>
+
+</body>
+
+</html>

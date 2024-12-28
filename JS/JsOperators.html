@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>JavaScript Operators</h4>
+
+    <div>
+        <h5>1. Arithmetic Operators:</h5>
+        <pre><code id="arithmetic-operators"></code></pre>
+    </div>
+
+    <div>
+        <h5>2. Assignment Operators:</h5>
+        <pre><code id="assignment-operators"></code></pre>
+    </div>
+
+    <div>
+        <h5>3. Comparison Operators:</h5>
+        <pre><code id="comparison-operators"></code></pre>
+    </div>
+
+    <div>
+        <h5>4. Logical Operators:</h5>
+        <pre><code id="logical-operators"></code></pre>
+    </div>
+
+    <div>
+        <h5>5. Ternary Operator:</h5>
+        <pre><code id="ternary-operator"></code></pre>
+    </div>
+
+    <div>
+        <h5>6. Unary Operators:</h5>
+        <pre><code id="unary-operators"></code></pre>
+    </div>
+
+    <div>
+        <h5>7. Type Operators:</h5>
+        <pre><code id="type-operators"></code></pre>
+    </div>
+
+    <script>
+        // 1. Arithmetic Operators
+        let a = 10, b = 3;
+        let add = a + b;
+        let subtract = a - b;
+        let multiply = a * b;
+        let divide = a / b;
+        let modulus = a % b;
+        let increment = a++;
+        let decrement = b--;
+
+        document.getElementById("arithmetic-operators").textContent = `
+            Arithmetic Operators:
+            a = ${a}, b = ${b}
+            Addition: ${add}
+            Subtraction: ${subtract}
+            Multiplication: ${multiply}
+            Division: ${divide}
+            Modulus: ${modulus}
+            Post-Increment (a++): ${increment} (a after increment: ${a})
+            Post-Decrement (b--): ${decrement} (b after decrement: ${b})
+        `;
+
+        // 2. Assignment Operators
+        let x = 5;
+
+        document.getElementById("assignment-operators").textContent = `
+            Assignment Operators:
+            Starting value of x: 5
+            x += 2: ${x += 2}
+            x -= 1: ${x -= 1}
+            x *= 3: ${x *= 3}
+            x /= 2: ${x /= 2}
+            x %= 3: ${x %= 3}
+        `;
+
+        // 3. Comparison Operators
+        let isEqual = (a == b);
+        let isStrictEqual = (a === b);
+        let isNotEqual = (a != b);
+        let isGreaterThan = (a > b);
+        let isLessThan = (a < b);
+        let isGreaterThanOrEqual = (a >= b);
+        let isLessThanOrEqual = (a <= b);
+
+        document.getElementById("comparison-operators").textContent = `
+            Comparison Operators:
+            a = ${a}, b = ${b}
+            a == b: ${isEqual} (Equal to)
+            a === b: ${isStrictEqual} (Strict Equal to)
+            a != b: ${isNotEqual} (Not Equal to)
+            a > b: ${isGreaterThan} (Greater than)
+            a < b: ${isLessThan} (Less than)
+            a >= b: ${isGreaterThanOrEqual} (Greater than or Equal to)
+            a <= b: ${isLessThanOrEqual} (Less than or Equal to)
+        `;
+
+        // 4. Logical Operators
+        let andOperator = (a > 5 && b < 5);
+        let orOperator = (a > 5 || b > 5);
+        let notOperator = !(a > 5); 
+
+        document.getElementById("logical-operators").textContent = `
+            Logical Operators:
+            a = ${a}, b = ${b}
+            a > 5 && b < 5: ${andOperator} (AND)
+            a > 5 || b > 5: ${orOperator} (OR)
+            !(a > 5): ${notOperator} (NOT)
+        `;
+
+        // 5. Ternary Operator (Conditional Operator)
+        let result = (a > b) ? "a is greater than b" : "a is not greater than b";
+        document.getElementById("ternary-operator").textContent = `
+            Ternary Operator:
+            a = ${a}, b = ${b}
+            a > b ? "a is greater than b" : "a is not greater than b": ${result}
+        `;
+
+        // 6. Unary Operators
+        let unaryPlus = +a;  // Convert to number
+        let unaryMinus = -b; // Negate value
+
+        document.getElementById("unary-operators").textContent = `
+            Unary Operators:
+            a = ${a}, b = ${b}
+            + a (Unary Plus): ${unaryPlus} (convert to number)
+            - b (Unary Minus): ${unaryMinus} (negate value)
+        `;
+
+
+        // 7. Type Operators
+        let typeOfA = typeof a;
+        let instanceOfA = [1, 2, 3] instanceof Array;
+
+        document.getElementById("type-operators").textContent = `
+            Type Operators:
+            typeof a: ${typeOfA} (Type of 'a')
+            [1, 2, 3] instanceof Array: ${instanceOfA} (Is Array)
+        `;
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays and Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>JavaScript Arrays and Methods</h4>
+
+    <!-- Array Creation -->
+    <div>
+        <h5>1. Array Creation</h5>
+        <pre><code>
+            let fruits = ["Apple", "Banana", "Cherry"];
+        </code></pre>
+        <button onclick="showArray()">Show Fruits Array</button>
+        <p id="arrayOutput" class="output"></p>
+    </div>
+
+    <!-- Array Properties -->
+    <div>
+        <h5>2. Array Properties</h5>
+        <pre><code>
+            let length = fruits.length; // Get the length of the array
+        </code></pre>
+        <button onclick="showArrayLength()">Show Length</button>
+        <p id="lengthOutput" class="output"></p>
+    </div>
+
+    <!-- Array Methods: push() and pop() -->
+    <div>
+        <h5>3. push() and pop()</h5>
+        <pre><code>
+            fruits.push("Orange"); // Adds an element to the end
+            let last = fruits.pop(); // Removes the last element
+        </code></pre>
+        <button onclick="pushPop()">Add and Remove</button>
+        <p id="pushPopOutput" class="output"></p>
+    </div>
+
+    <!-- Array Methods: shift() and unshift() -->
+    <div>
+        <h5>4. shift() and unshift()</h5>
+        <pre><code>
+            let first = fruits.shift(); // Removes the first element
+            fruits.unshift("Mango"); // Adds an element to the beginning
+        </code></pre>
+        <button onclick="shiftUnshift()">Add/Remove First Element</button>
+        <p id="shiftUnshiftOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: concat() -->
+    <div>
+        <h5>5. concat()</h5>
+        <pre><code>
+            let tropicalFruits = ["Pineapple", "Papaya"];
+            let allFruits = fruits.concat(tropicalFruits); // Merges two arrays
+        </code></pre>
+        <button onclick="concatArrays()">Merge Arrays</button>
+        <p id="concatOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: join() -->
+    <div>
+        <h5>6. join()</h5>
+        <pre><code>
+            let fruitList = fruits.join(", "); // Joins array elements into a string
+        </code></pre>
+        <button onclick="joinArray()">Join Array</button>
+        <p id="joinOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: slice() -->
+    <div>
+        <h5>7. slice()</h5>
+        <pre><code>
+            let newArray = fruits.slice(1, 3); // Returns elements from index 1 to 2
+        </code></pre>
+        <button onclick="sliceArray()">Slice Array</button>
+        <p id="sliceOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: splice() -->
+    <div>
+        <h5>8. splice()</h5>
+        <pre><code>
+            fruits.splice(2, 1, "Grapes"); // Removes 1 item at index 2 and adds "Grapes"
+        </code></pre>
+        <button onclick="spliceArray()">Splice Array</button>
+        <p id="spliceOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: forEach() -->
+    <div>
+        <h5>9. forEach()</h5>
+        <pre><code>
+            fruits.forEach(function(fruit) {
+                console.log(fruit); // Prints each fruit in the array
+            });
+        </code></pre>
+        <button onclick="forEachLoop()">forEach Example</button>
+        <p id="forEachOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: map() -->
+    <div>
+        <h5>10. map()</h5>
+        <pre><code>
+            let upperFruits = fruits.map(fruit => fruit.toUpperCase()); // Transforms each fruit to uppercase
+        </code></pre>
+        <button onclick="mapArray()">Map Array</button>
+        <p id="mapOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: filter() -->
+    <div>
+        <h5>11. filter()</h5>
+        <pre><code>
+            let longNames = fruits.filter(fruit => fruit.length > 5); // Filters fruits with name length > 5
+        </code></pre>
+        <button onclick="filterArray()">Filter Array</button>
+        <p id="filterOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: reduce() -->
+    <div>
+        <h5>12. reduce()</h5>
+        <pre><code>
+            let totalLength = fruits.reduce((total, fruit) => total + fruit.length, 0); // Sum of the lengths of all fruit names
+        </code></pre>
+        <button onclick="reduceArray()">Reduce Array</button>
+        <p id="reduceOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: sort() and reverse() -->
+    <div>
+        <h5>13. sort() and reverse()</h5>
+        <pre><code>
+            fruits.sort(); // Sorts the array alphabetically
+            fruits.reverse(); // Reverses the order of elements
+        </code></pre>
+        <button onclick="sortReverse()">Sort and Reverse</button>
+        <p id="sortReverseOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: find() and findIndex() -->
+    <div>
+        <h5>14. find() and findIndex()</h5>
+        <pre><code>
+            let foundFruit = fruits.find(fruit => fruit.startsWith("G")); // Finds the first fruit starting with "G"
+            let index = fruits.findIndex(fruit => fruit === "Banana"); // Finds the index of "Banana"
+        </code></pre>
+        <button onclick="findArray()">Find in Array</button>
+        <p id="findOutput" class="output"></p>
+    </div>
+
+    <!-- Array Method: includes() and indexOf() -->
+    <div>
+        <h5>15. includes() and indexOf()</h5>
+        <pre><code>
+            let hasApple = fruits.includes("Apple"); // Checks if "Apple" is in the array
+            let appleIndex = fruits.indexOf("Apple"); // Finds the index of "Apple"
+        </code></pre>
+        <button onclick="includesIndexOf()">Includes/IndexOf</button>
+        <p id="includesIndexOfOutput" class="output"></p>
+    </div>
+
+    <script>
+        // 1. Array Creation
+        let fruits = ["Apple", "Banana", "Cherry"];
+
+        function showArray() {
+            document.getElementById("arrayOutput").textContent = JSON.stringify(fruits, null, 2);
+        }
+
+        // 2. Array Properties
+        function showArrayLength() {
+            document.getElementById("lengthOutput").textContent = `Length of fruits array: ${fruits.length}`;
+        }
+
+        // 3. push() and pop()
+        function pushPop() {
+            fruits.push("Orange");
+            let last = fruits.pop();
+            document.getElementById("pushPopOutput").textContent = `Array after push/pop: ${JSON.stringify(fruits, null, 2)} (Removed: ${last})`;
+        }
+
+        // 4. shift() and unshift()
+        function shiftUnshift() {
+            let first = fruits.shift();
+            fruits.unshift("Mango");
+            document.getElementById("shiftUnshiftOutput").textContent = `Array after shift/unshift: ${JSON.stringify(fruits, null, 2)} (Removed: ${first})`;
+        }
+
+        // 5. concat()
+        function concatArrays() {
+            let tropicalFruits = ["Pineapple", "Papaya"];
+            let allFruits = fruits.concat(tropicalFruits);
+            document.getElementById("concatOutput").textContent = `Merged Arrays: ${JSON.stringify(allFruits, null, 2)}`;
+        }
+
+        // 6. join()
+        function joinArray() {
+            let fruitList = fruits.join(", ");
+            document.getElementById("joinOutput").textContent = `Fruits: ${fruitList}`;
+        }
+
+        // 7. slice()
+        function sliceArray() {
+            let newArray = fruits.slice(1, 3);
+            document.getElementById("sliceOutput").textContent = `Sliced Array: ${JSON.stringify(newArray, null, 2)}`;
+        }
+
+        // 8. splice()
+        function spliceArray() {
+            fruits.splice(2, 1, "Grapes");
+            document.getElementById("spliceOutput").textContent = `Array after splice: ${JSON.stringify(fruits, null, 2)}`;
+        }
+
+        // 9. forEach()
+        function forEachLoop() {
+            fruits.forEach(fruit => {
+                console.log(fruit);  // Printing each fruit to the console
+            });
+            document.getElementById("forEachOutput").textContent = "See console for output from forEach.";
+        }
+
+        // 10. map()
+        function mapArray() {
+            let upperFruits = fruits.map(fruit => fruit.toUpperCase());
+            document.getElementById("mapOutput").textContent = `Mapped Array (Uppercase): ${JSON.stringify(upperFruits, null, 2)}`;
+        }
+
+        // 11. filter()
+        function filterArray() {
+            let longNames = fruits.filter(fruit => fruit.length > 5);
+            document.getElementById("filterOutput").textContent = `Filtered Array (Long names): ${JSON.stringify(longNames, null, 2)}`;
+        }
+
+        // 12. reduce()
+        function reduceArray() {
+            let totalLength = fruits.reduce((total, fruit) => total + fruit.length, 0);
+            document.getElementById("reduceOutput").textContent = `Total Length of Fruit Names: ${totalLength}`;
+        }
+
+        // 13. sort() and reverse()
+        function sortReverse() {
+            fruits.sort();
+            fruits.reverse();
+            document.getElementById("sortReverseOutput").textContent = `Sorted and Reversed Array: ${JSON.stringify(fruits, null, 2)}`;
+        }
+
+        // 14. find() and findIndex()
+        function findArray() {
+            let foundFruit = fruits.find(fruit => fruit.startsWith("G"));
+            let index = fruits.findIndex(fruit => fruit === "Banana");
+            document.getElementById("findOutput").textContent = `Found fruit: ${foundFruit}, Index of Banana: ${index}`;
+        }
+
+        // 15. includes() and indexOf()
+        function includesIndexOf() {
+            let hasApple = fruits.includes("Apple");
+            let appleIndex = fruits.indexOf("Apple");
+            document.getElementById("includesIndexOfOutput").textContent = `Has Apple: ${hasApple}, Index of Apple: ${appleIndex}`;
+        }
+    </script>
+
+</body>
+
+</html>

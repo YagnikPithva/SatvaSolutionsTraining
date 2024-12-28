@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Introduction</title>
+</head>
+
+<body>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+    
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    
+    <p id="demo">JavaScript can change HTML styles.</p>
+
+    <span id="hs"> Hide - Show Me !!! </span>
+    <button type="button" onclick='document.getElementById("hs").style.display = "none"'>Hide!</button>
+    <button type="button" onclick='document.getElementById("hs").style.display = "block"'>Show!</button>
+    
+    <p id="demo1">font changed by JavaScript.</p>
+
+    <button id="alert" onclick="fireAlert()"> Fire Alert </button>
+    <script>
+        document.getElementById("demo1").style.fontSize = "25px";
+
+        fireAlert = () => {
+            // alert is used to show the message in the alert box.
+            alert("Hello, I am an alert box!");
+            
+            // console is used to log the message in the console of the browser.
+            console.log("Hello, I am a console log!");
+        }
+    </script>
+
+</body>
+
+</html>

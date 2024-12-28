@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>JavaScript Loops</h4>
+
+    <div>
+        <h5>1. for Loop:</h5>
+        <pre><code>
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+    }
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="for-loop"></code></pre>
+    </div>
+
+    <div>
+        <h5>2. while Loop:</h5>
+        <pre><code>
+    let i = 0;
+    while (i < 5) {
+        console.log(i);
+        i++;
+    }
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="while-loop"></code></pre>
+    </div>
+
+    <div>
+        <h5>3. do...while Loop:</h5>
+        <pre><code>
+    let i = 0;
+    do {
+        console.log(i);
+        i++;
+    } while (i < 5);
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="do-while-loop"></code></pre>
+    </div>
+
+    <div>
+        <h5>4. for...in Loop (for objects):</h5>
+        <pre><code>
+    const person = { name: "John", age: 30, city: "New York" };
+    for (let key in person) {
+        console.log(key + ": " + person[key]);
+    }
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="for-in-loop"></code></pre>
+    </div>
+
+    <div>
+        <h5>5. for...of Loop (for arrays):</h5>
+        <pre><code>
+    const arr = [10, 20, 30, 40];
+    for (let value of arr) {
+        console.log(value);
+    }
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="for-of-loop"></code></pre>
+    </div>
+
+    <div>
+        <h5>6. forEach Method (Array method):</h5>
+        <pre><code>
+    const arr = [10, 20, 30, 40];
+    arr.forEach((value, index) => {
+        console.log(index + ": " + value);
+    });
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="forEach-loop"></code></pre>
+    </div>
+
+    <div>
+        <h5>7. Break and Continue Example:</h5>
+        <pre><code>
+    for (let i = 0; i < 5; i++) {
+        if (i === 2) continue;  // Skips iteration when i is 2
+        if (i === 4) break;     // Breaks the loop when i is 4
+        console.log(i);
+    }
+        </code></pre>
+        <p><strong>Output:</strong></p>
+        <pre><code id="break-continue-example"></code></pre>
+    </div>
+    <script>
+        // 1. for Loop
+        let forOutput = '';
+        for (let i = 0; i < 5; i++) {
+            forOutput += i + ' ';
+        }
+        document.getElementById("for-loop").textContent = `for loop: ${forOutput.trim()}`;
+
+        // 2. while Loop
+        let whileOutput = '';
+        let j = 0;
+        while (j < 5) {
+            whileOutput += j + ' ';
+            j++;
+        }
+        document.getElementById("while-loop").textContent = `while loop: ${whileOutput.trim()}`;
+
+        // 3. do...while Loop
+        let doWhileOutput = '';
+        let k = 0;
+        do {
+            doWhileOutput += k + ' ';
+            k++;
+        } while (k < 5);
+        document.getElementById("do-while-loop").textContent = `do...while loop: ${doWhileOutput.trim()}`;
+
+        // 4. for...in Loop (for objects)
+        const person = { name: "John", age: 30, city: "New York" };
+        let forInOutput = '';
+        for (let key in person) {
+            forInOutput += `${key}: ${person[key]} `;
+        }
+        document.getElementById("for-in-loop").textContent = `for...in loop (for objects): ${forInOutput.trim()}`;
+
+        // 5. for...of Loop (for arrays)
+        const arr = [10, 20, 30, 40];
+        let forOfOutput = '';
+        for (let value of arr) {
+            forOfOutput += value + ' ';
+        }
+        document.getElementById("for-of-loop").textContent = `for...of loop (for arrays): ${forOfOutput.trim()}`;
+
+        // 6. forEach Method (Array method)
+        let forEachOutput = '';
+        arr.forEach((value, index) => {
+            forEachOutput += `Index ${index}: ${value} `;
+        });
+        document.getElementById("forEach-loop").textContent = `forEach loop: ${forEachOutput.trim()}`;
+
+        // 7. Break and Continue Example
+        let breakContinueOutput = '';
+        for (let i = 0; i < 5; i++) {
+            if (i === 2) continue;  // Skips iteration when i is 2
+            if (i === 4) break;     // Breaks the loop when i is 4
+            breakContinueOutput += i + ' ';
+        }
+        document.getElementById("break-continue-example").textContent = `Break and Continue example: ${breakContinueOutput.trim()}`;
+
+    </script>
+
+</body>
+
+</html>

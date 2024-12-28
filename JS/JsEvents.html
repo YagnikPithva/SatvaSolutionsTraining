@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button,
+        input,
+        textarea {
+            margin: 10px;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .event-box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid #ccc;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>JavaScript Event Demonstration</h4>
+
+    <!-- Click Event Example -->
+    <div>
+        <h3>1. Click Event</h3>
+        <button id="clickButton">Click Me!</button>
+        <p id="clickOutput" class="output">No click yet</p>
+    </div>
+
+    <!-- Mouse Events -->
+    <div>
+        <h3>2. Mouse Events (mouseover and mouseout)</h3>
+        <div id="mouseBox" class="event-box">Hover over me!</div>
+        <p id="mouseOutput" class="output">No mouseover yet</p>
+    </div>
+
+    <!-- Keyboard Events -->
+    <div>
+        <h3>3. Keyboard Events (keydown and keyup)</h3>
+        <input type="text" id="keyboardInput" placeholder="Type something..." />
+        <p id="keyboardOutput" class="output">No key pressed</p>
+    </div>
+
+    <!-- Focus and Blur Events -->
+    <div>
+        <h3>4. Focus and Blur Events</h3>
+        <input type="text" id="focusInput" placeholder="Focus here..." />
+        <p id="focusOutput" class="output">Not focused</p>
+    </div>
+
+    <!-- Form Events -->
+    <div>
+        <h3>5. Form Submit Event</h3>
+        <form id="sampleForm">
+            <input type="text" id="nameInput" placeholder="Enter your name" required />
+            <button type="submit">Submit</button>
+        </form>
+        <p id="formOutput" class="output">Form not submitted</p>
+    </div>
+
+    <!-- Window Events -->
+    <div>
+        <h3>6. Window Resize Event</h3>
+        <p id="resizeOutput" class="output">Window resized!</p>
+    </div>
+
+    <script>
+        // 1. Click Event
+        document.getElementById("clickButton").addEventListener("click", function () {
+            document.getElementById("clickOutput").textContent = "Button clicked!";
+        });
+
+        // 2. Mouse Events (mouseover, mouseout)
+        document.getElementById("mouseBox").addEventListener("mouseover", function () {
+            document.getElementById("mouseOutput").textContent = "Mouse is over the box!";
+        });
+
+        document.getElementById("mouseBox").addEventListener("mouseout", function () {
+            document.getElementById("mouseOutput").textContent = "Mouse left the box!";
+        });
+
+        // 3. Keyboard Events (keydown, keyup)
+        document.getElementById("keyboardInput").addEventListener("keydown", function () {
+            document.getElementById("keyboardOutput").textContent = "Key is being pressed...";
+        });
+
+        document.getElementById("keyboardInput").addEventListener("keyup", function (event) {
+            document.getElementById("keyboardOutput").textContent = `Key released: ${event.key}`;
+        });
+
+        // 4. Focus and Blur Events
+        document.getElementById("focusInput").addEventListener("focus", function () {
+            document.getElementById("focusOutput").textContent = "Input focused!";
+        });
+
+        document.getElementById("focusInput").addEventListener("blur", function () {
+            document.getElementById("focusOutput").textContent = "Input lost focus!";
+        });
+
+        // 5. Form Submit Event
+        document.getElementById("sampleForm").addEventListener("submit", function (event) {
+            event.preventDefault();  // Prevent the form from actually submitting
+            const name = document.getElementById("nameInput").value;
+            document.getElementById("formOutput").textContent = `Form submitted! Name: ${name}`;
+        });
+
+        // 6. Window Resize Event
+        window.addEventListener("resize", function () {
+            document.getElementById("resizeOutput").textContent = `Window resized to ${window.innerWidth} x ${window.innerHeight}`;
+        });
+    </script>
+
+</body>
+
+</html>

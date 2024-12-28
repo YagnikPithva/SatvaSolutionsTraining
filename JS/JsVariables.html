@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables Concepts</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h5>JavaScript Variables Concepts</h5>
+
+    <div>
+        <h3>1. Variable Declarations:</h3>
+        <p><strong>var</strong> (function-scoped): <span id="var-example"></span></p>
+        <p><strong>let</strong> (block-scoped): <span id="let-example"></span></p>
+        <p><strong>const</strong> (block-scoped, read-only): <span id="const-example"></span></p>
+    </div>
+
+    <div>
+        <h3>2. Data Types:</h3>
+        <pre><code id="data-types-example"></code></pre>
+    </div>
+
+    <div>
+        <h3>3. Type Coercion:</h3>
+        <pre><code id="type-coercion-example"></code></pre>
+    </div>
+
+    <script>
+        // 1. Variable Declarations
+        var x = 10; // 'var' is function-scoped
+        let y = 20; // 'let' is block-scoped
+        const z = 30; // 'const' is block-scoped and cannot be reassigned
+
+        function demoScopes() {
+            if (true) {
+                var a = 100;
+                let b = 200;
+                const c = 300;
+            }
+            document.getElementById("var-example").innerHTML = 'var a: ' + a;
+            try {
+                document.getElementById("let-example").textContent = 'let b: ' + b; // Error, 'b' is block-scoped
+                document.getElementById("const-example").textContent = 'let b: ' + c; // Error, 'c' is block-scoped
+            } catch (e) {
+                document.getElementById("let-example").textContent = 'let b: Error, ' + e.message;
+                document.getElementById("const-example").textContent = 'const c : Error, ' + e.toString().slice(0, 15);
+            }
+        }
+
+        // 2. Data Types Example
+        let str = "Hello, JavaScript!";
+        let num = 42;
+        let isActive = true;
+        let obj = { name: "John", age: 30 };
+        let arr = [1, 2, 3, 4, 5];
+        let nullValue = null;
+        let undefinedValue;
+
+        document.getElementById("data-types-example").textContent = `
+            String: ${str}
+            Number: ${num}
+            Boolean: ${isActive}
+            Object: ${JSON.stringify(obj)}
+            Array: ${arr}
+            Null: ${nullValue}
+            Undefined: ${undefinedValue}
+        `;
+
+        // 3. Type Coercion Example
+        let coercedString = "5" + 3;
+        let coercedNumber = "5" - 3;
+
+        document.getElementById("type-coercion-example").textContent = `Type Coercion in action: 
+        "5" + 3 = ${coercedString} (String concatenation) 
+        "5" - 3 = ${coercedNumber}  (Subtraction, results in number) `;
+
+        demoScopes();
+    </script>
+
+</body>
+
+</html>
